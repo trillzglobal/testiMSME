@@ -21,6 +21,9 @@ class CreateTemporariesTable extends Migration
             $table->string('email')->nullable();
             $table->integer('ref_id')->nullable();
             $table->string('userid')->nullable();
+            $table->string('business_name')->nullable();
+            $table->string('address')->nullable();
+            $table->string('business_type')->nullable();
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
 

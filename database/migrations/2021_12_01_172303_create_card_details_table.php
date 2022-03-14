@@ -22,7 +22,7 @@ class CreateCardDetailsTable extends Migration
             $table->string('token')->nullable();
             $table->string('exp')->nullable();
             $table->boolean('recurrsive')->default(false);
-            $table->json('api_response');
+            $table->json('api_response')->default(json_encode([]));
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
 

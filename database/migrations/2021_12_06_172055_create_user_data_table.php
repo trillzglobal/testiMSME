@@ -14,19 +14,17 @@ class CreateUserDataTable extends Migration
      */
     public function up()
     {
-        
+
         Schema::create('user_data', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id')->unique();
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->datetime('dob')->nullable();
-            $table->longText('address')->nullable();
-            $table->unsignedInteger('state_id');
-            $table->foreign('state_id')->references('id')->on('states')->onDelete('cascade');
-            $table->unsignedInteger('city_id');
-            $table->foreign('city_id')->references('id')->on('cities')->onDelete('cascade');            
-            $table->unsignedInteger('country_id');
+            $table->longText('home_address')->nullable();
+            $table->string('business_name')->nullable();
+            $table->string('business_type')->nullable();
+            $table->string('business_address')->nullable();
             $table->longText('avatar')->nullable();
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
